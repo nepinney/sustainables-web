@@ -3,7 +3,7 @@
 
     <Navbar />
 
-    <main class='flex w-full pt-24'>
+    <main class='flex w-full pt-36'>
       <Nuxt/>
     </main>
 

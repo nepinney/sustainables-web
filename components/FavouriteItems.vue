@@ -1,6 +1,6 @@
 <template>
   <section class='w-full'>
-      <h1 class='text-center pt-6 pb-6'>OUR FAVOURITES</h1>
+      <h1 class='text-center pb-6'>OUR FAVOURITES</h1>
 
     <div class='flex justify-between items-center'>
 
@@ -11,7 +11,7 @@
         </svg>
 
         <div>
-          <img src='~/assets/images/shoe.png'>
+          <img src='~/assets/images/allBird.png'>
         </div>
 
         <svg class='mr-11 ml-11' viewBox="0 0 11 23" height='4rem' width='2rem'>

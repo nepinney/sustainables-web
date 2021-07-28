@@ -1,40 +1,67 @@
 <template>
-  <nav class='p-8 flex justify-between fixed top-0 w-full left-0 lg:left-16 z-10'>
-    <div class='flex items-center'>
-      <NuxtLink to='/'>
-        <div id='logoBackground' class='flex justify-center items-center'>
-          <p>SUSTAINABLES</p>
-        </div>
-      </NuxtLink>
-    </div>
-    <NuxtLink to='Products'>
+  <nav class='p-8 flex-col fixed top-0 w-full left-0 lg:left-16 z-10'>
+    <div class='flex justify-between'>
       <div class='flex items-center'>
-          <svg id='menuIcon' viewBox="0 0 52 52" width='50' height='50'>
+        <NuxtLink to='/'>
+          <div id='logoBackground' class='flex justify-center items-center'>
+            <p>SUSTAINABLES</p>
+          </div>
+        </NuxtLink>
+      </div>
+        <div class='flex items-center'>
+          <svg id='menuIcon' viewBox="0 0 52 52" width='50' height='50' @click='rotateHamburgerAndShowNavLinks()'>
             <g>
               <path class="menuVectors" d="M26.05,1.05a25,25,0,1,1-25,25,25,25,0,0,1,25-25" transform="translate(-0.05 -0.05)"/>
               <line class="menuVectors" x1="11.94" y1="22.44" x2="40.06" y2="22.44"/>
               <line class="menuVectors" x1="11.94" y1="29.56" x2="40.06" y2="29.56"/>
             </g>
           </svg>
-      </div>
-    </NuxtLink>
-    <div class='flex items-center'>
-      <div id='socialMediaIconsContainer' class='flex justify-end'>
-        <svg viewBox="0 0 24 24" width='25' height='25'>
-          <g id="Shape">
-            <path class="instaVectors" d="M16,22.2H6.41A6.21,6.21,0,0,1,.2,16V6.41A6.22,6.22,0,0,1,6.41.2H16a6.21,6.21,0,0,1,6.2,6.21V16A6.21,6.21,0,0,1,16,22.2ZM6.41,2.2A4.22,4.22,0,0,0,2.2,6.41V16a4.21,4.21,0,0,0,4.21,4.2H16A4.2,4.2,0,0,0,20.2,16V6.41A4.21,4.21,0,0,0,16,2.2Z"/>
-            <path class="instaVectors" d="M11.2,17A5.78,5.78,0,1,1,17,11.2,5.79,5.79,0,0,1,11.2,17Zm0-9.56A3.78,3.78,0,1,0,15,11.2,3.79,3.79,0,0,0,11.2,7.42Z"/>
-            <circle class="instaVectors" cx="17" cy="5.14" r="1.25"/>
-          </g>
-        </svg>
+        </div>
+      <div class='flex items-center'>
+        <div id='socialMediaIconsContainer' class='flex justify-end'>
+          <InstagramIcon color='black' width='1.5rem' height='1.5rem' />
+        </div>
       </div>
     </div>
+
+    <div class='nav-list transform flex justify-center items-center pt-8'>
+      <ul class='list-none m-0 text-center'>
+        <li><NuxtLink to='/'>Home</NuxtLink></li>
+        <li><NuxtLink to='Products'>Products</NuxtLink></li>
+        <li><NuxtLink to='/AboutUs'>About</NuxtLink></li>
+        <li><NuxtLink to='/Contact'>Contact</NuxtLink></li>
+      </ul>
+    </div>
+
   </nav>
 </template>
 
 <script>
+import $ from 'jquery';
+import InstagramIcon from './InstagramIcon'
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  components: { InstagramIcon },
+  methods: {
+    rotateHamburgerAndShowNavLinks() {
+      const iconLinesSelector = "#menuIcon";
+      const navListSelector = ".nav-list";
+
+      if (  $( iconLinesSelector ).css( "transform" ) === 'none' ){
+        $(iconLinesSelector).css("transform","rotate(90deg)");
+      } else {
+        $(iconLinesSelector).css("transform","" );
+      }
+
+      $( navListSelector ).toggleClass('nav-list-active-transform');
+
+      // if ( $(navListSelector).css ("display") === 'none' ){
+      //   $(navListSelector).css("display", "block");
+      // } else {
+      //   $(navListSelector).css("display", "none" );
+      // }
+    },
+  },
 }
 </script>
 
@@ -47,8 +74,34 @@ export default {
   }
 }
 
+nav {
+  /*border-bottom: solid 1px #707070;*/
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-list {
+  /*z-index: -1;*/
+  display: none;
+  opacity: 0;
+  transform: translateY(-15rem);
+}
+
+.transform {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 2s ease;
+  /*transition: opacity 500ms ease-in, transform 500ms;*/
+}
+
+.nav-list-active-transform {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 #logoBackground {
-  background-color: #707070;
+  background-color: #3A5D4A;
   height: 32px;
   width: 152px;
 }
@@ -64,14 +117,15 @@ p {
 
 #menuIcon {
   fill:none;
-  stroke:#707070;
+  stroke:black;
   stroke-miterlimit:10;
   stroke-width:2px;
+  transition-duration: 0.6s;
 }
 
-#menuIcon :hover {
+#menuIcon:hover, .menuVectors:hover {
   fill: #BCDBB5;
-  stroke: #707070;
+  stroke: black;
   stroke-miterlimit:10;
   stroke-width:2px;
 }
@@ -81,7 +135,7 @@ p {
 }
 
 .instaVectors {
-  fill:#707070;
+  fill: black;
 }
 
 </style>
