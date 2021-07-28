@@ -10,9 +10,9 @@
           </g>
         </svg>
 
-        <div>
-          <img src='~/assets/images/allBird.png'>
-        </div>
+<!--        <div>-->
+<!--          <img src='~/assets/images/allBird.png'>-->
+<!--        </div>-->
 
         <svg class='mr-11 ml-11' viewBox="0 0 11 23" height='4rem' width='2rem'>
           <g id="arrowImage">
