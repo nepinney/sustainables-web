@@ -4,7 +4,7 @@
       <div class='flex flex-col pl-10 pr-10 w-full xl:w-1/2'>
 
         <div class='text-container header flex p-8 lg:p-16'>
-          <p class='text-2xl lg:text-3xl'>FEEL GOOD ABOUT WHAT YOU BUY.</p>
+          <p class='text-2xl lg:text-3xl text-gray'>FEEL GOOD ABOUT WHAT YOU BUY.</p>
         </div>
 
         <div class='text-container flex p-8 lg:p-16'>
@@ -49,7 +49,7 @@ export default {
 
 p {
   font-family: "Roboto Condensed";
-  color: #707070;
+  /*color: #707070;*/
 }
 
 .header, .header p {
