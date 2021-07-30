@@ -8,7 +8,7 @@
         </div>
 
         <div class='text-container flex p-8 lg:p-16'>
-          <p class='text-xl lg:text-2xl'><nuxt-content :document="page" /></p>
+          <p class='text-xl lg:text-2xl text-gray'><nuxt-content :document="page" /></p>
         </div>
 
 

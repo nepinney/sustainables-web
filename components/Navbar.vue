@@ -1,15 +1,15 @@
 <template>
-  <nav class='p-8 flex-col fixed top-0 w-full left-0 lg:left-16 z-10'>
-    <div class='flex justify-between'>
-      <div class='flex items-center'>
+  <nav class='p-4 lg:p-8 fixed top-0 w-full left-0 lg:left-16 z-10'>
+    <div class='grid grid-cols-3'>
+      <div class='flex items-center justify-start'>
         <NuxtLink to='/'>
-          <div id='logoBackground' class='flex justify-center items-center'>
-            <p>SUSTAINABLES</p>
+          <div id='logoBackground' class='flex items-center'>
+            <p class='text-base sm:text-lg md:text-xl pl-0.5 pr-0.5'>SUSTAINABLES</p>
           </div>
         </NuxtLink>
       </div>
-        <div class='flex items-center'>
-          <svg id='menuIcon' viewBox="0 0 52 52" width='50' height='50' @click='rotateHamburgerAndShowNavLinks()'>
+      <div class='flex items-center justify-center'>
+          <svg id='menuIcon' viewBox="0 0 52 52" width='30%' @click='rotateHamburgerAndShowNavLinks()'>
             <g>
               <path class="menuVectors" d="M26.05,1.05a25,25,0,1,1-25,25,25,25,0,0,1,25-25" transform="translate(-0.05 -0.05)"/>
               <line class="menuVectors" x1="11.94" y1="22.44" x2="40.06" y2="22.44"/>
@@ -17,19 +17,17 @@
             </g>
           </svg>
         </div>
-      <div class='flex items-center'>
-        <div id='socialMediaIconsContainer' class='flex justify-end'>
+      <div class='flex items-center justify-end'>
           <InstagramIcon color='black' width='1.5rem' height='1.5rem' />
-        </div>
       </div>
     </div>
 
     <div class='nav-list transform flex justify-center items-center pt-8'>
       <ul class='list-none m-0 text-center'>
         <li><NuxtLink to='/'>Home</NuxtLink></li>
-        <li><NuxtLink to='Products'>Products</NuxtLink></li>
-        <li><NuxtLink to='/AboutUs'>About</NuxtLink></li>
-        <li><NuxtLink to='/Contact'>Contact</NuxtLink></li>
+        <li><NuxtLink to='products'>Products</NuxtLink></li>
+        <li><NuxtLink to='aboutUs'>About</NuxtLink></li>
+        <li><NuxtLink to='contact'>Contact</NuxtLink></li>
       </ul>
     </div>
 
@@ -102,14 +100,14 @@ nav {
 
 #logoBackground {
   background-color: #3A5D4A;
-  height: 32px;
-  width: 152px;
+  /*height: 12.8%;*/
+  /*width: 60.8%;*/
 }
 
 p {
   font-family: "Roboto Condensed";
   font-weight: 700;
-  font-size: 20px;
+  /*font-size: 1.2rem;*/
   color: #F6F6F6;
   letter-spacing: 1px;
   margin: 0;
@@ -120,7 +118,8 @@ p {
   stroke:black;
   stroke-miterlimit:10;
   stroke-width:2px;
-  transition-duration: 0.6s;
+  max-width: 48px;
+  transition-duration: 0.3s;
 }
 
 #menuIcon:hover, .menuVectors:hover {

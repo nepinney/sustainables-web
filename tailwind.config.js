@@ -11,8 +11,12 @@ module.exports = {
   theme: {
     colors: {
       gray: {
-        light: '#707070',
+        light: '#F6F6F6',
         DEFAULT: '#707070',
+      },
+      green: {
+        DEFAULT: '#47745b',
+        dark: '#3A5D4A',
       },
     },
     extend: {
