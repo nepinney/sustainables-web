@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'Category',
+  name: 'CategoryCard',
   props: {
     svgHTML: String(),
     categoryName: String(),

@@ -28,15 +28,19 @@
 </template>
 
 <script>
-import InstagramIcon from '../components/InstagramIcon'
-import FacebookIcon from '../components/FacebookIcon'
+import InstagramIcon from '../components/icons/InstagramIcon'
+import FacebookIcon from '../components/icons/FacebookIcon'
 export default {
   components: { FacebookIcon, InstagramIcon },
   layout: 'MainLayout',
   async asyncData ({ $content }) {
     const page = await $content('home').fetch();
     return { page };
-  }
+  },
+  // mounted() {
+  //   if (this.$store.state.allProducts.length === 0)
+  //     this.$store.dispatch('fetchAllProducts')
+  // }
 }
 </script>
 
