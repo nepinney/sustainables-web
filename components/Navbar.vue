@@ -38,7 +38,7 @@
 
 <script>
 import $ from 'jquery';
-import InstagramIcon from './InstagramIcon'
+import InstagramIcon from './icons/InstagramIcon'
 export default {
   name: 'Navbar',
   components: { InstagramIcon },

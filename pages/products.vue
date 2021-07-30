@@ -6,22 +6,28 @@
     <section class='w-full pl-0 pr-0 md:pl-14 md:pr-14 lg:pl-20 lg:pr-20'>
       <h1 class='text-center pt-10 pb-10'>CATEGORIES</h1>
       <div class='flex flex-col md:flex-row md:justify-evenly'>
-          <Category :svg-h-t-m-l="getGlassesSVG" category-name='Accessories'></Category>
-          <Category :svg-h-t-m-l="getShoeSVG" apply-transformation='true' category-name='Shoes'></Category>
-          <Category :svg-h-t-m-l="getShirtSVG" apply-transformation='true' category-name='Clothes'></Category>
+          <CategoryCard :svg-h-t-m-l="getGlassesSVG" category-name='Accessories'></CategoryCard>
+          <CategoryCard :svg-h-t-m-l="getShoeSVG" apply-transformation='true' category-name='Shoes'></CategoryCard>
+          <CategoryCard :svg-h-t-m-l="getShirtSVG" apply-transformation='true' category-name='Clothes'></CategoryCard>
       </div>
     </section>
   </div>
 </template>
 
 <script>
-import Category from '../components/Category'
+import FavouriteItems from '../components/product-affiliated/FavouriteItems'
+import CategoryCard from '../components/product-affiliated/CategoryCard'
 export default {
-  components: { Category },
+  components: { CategoryCard, FavouriteItems },
   layout: 'Secondary',
+  async asyncData({ $content, store }) {
+    const products = await $content('products').fetch()
+    // eslint-disable-next-line nuxt/no-this-in-fetch-data
+    store.commit('setProductList', await products)
+    console.log('In product.vue: ', await products)
+  },
   computed: {
-    getGlassesSVG()
-    {
+    getGlassesSVG() {
       return("<svg viewBox=\"0 0 68.47 28.25\" width=\"100%\">\n" +
         "      <defs><style>.glasses{fill: none;stroke:#47745b;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.3px;}</style></defs>\n" +
         "      <g>\n" +
@@ -60,6 +66,43 @@ export default {
         "        <path class=\"tshirt\" d=\"M35.05,8.6a3.84,3.84,0,1,1,3.84,3.84\"/>\n" +
         "      </g>\n" +
         "    </svg>")
+    },
+    getProducts() {
+      return this.$store.getters.getFavourites()
+    }
+  },
+  // async asyncData({ $content, params }) {
+  //   const products = await $content('products').fetch()
+  //
+  //   const favProducts = products.filter((product) => {
+  //     if (product.tags.includes('favourite')) {
+  //       return product
+  //     }
+  //     else
+  //       return null
+  //   });
+
+    // console.log('Length of favProducts: ', favProducts.length)
+    // console.log('Type of products: ', await typeof(products))
+    // .only(['title', 'description', 'img', 'slug', 'author'])
+
+    // const categories = await $content('categories')
+    //   .only(['name', 'svg'])
+    //   .fetch()
+    // return {
+    //   products,
+    //   favProducts,
+    //   categories
+    // }
+  // },
+  mounted() {
+    if (this.$store.state.activeProduct === 0) {
+      if (this.$store.getters.getFavourites.length > 0) {
+        this.$store.commit('setActiveProduct', (this.$store.getters.getFavourites)[0])
+
+      }
+      console.log('Favourites: ', this.$store.getters.getFavourites)
+      console.log('Active: ', this.$store.state.activeProduct.img)
     }
   }
 }
