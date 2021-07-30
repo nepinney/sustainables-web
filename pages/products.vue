@@ -5,7 +5,7 @@
 <!--    Categories -->
     <section class='w-full pl-0 pr-0 md:pl-14 md:pr-14 lg:pl-20 lg:pr-20'>
       <h1 class='text-center pt-10 pb-10'>CATEGORIES</h1>
-      <div class='pl-12 pr-12 md:p-0 grid grid-cols-2 grid-auto-rows md:grid-cols-3 md:grid-rows-1 gap-y-12'>
+      <div class='pl-6 pr-6 md:pl-12 md:pr-12 md:p-0 grid grid-cols-2 grid-auto-rows md:grid-cols-3 md:grid-rows-1 gap-y-10 md:gap-y-12'>
 <!--      <div class='grid grid-cols-1 grid-rows-3 md:grid-cols-3 md:grid-rows-1 md:flex-row md:justify-evenly'>-->
         <div v-for='category in categories' :key='category.title' class='flex justify-center'>
           <CategoryCard

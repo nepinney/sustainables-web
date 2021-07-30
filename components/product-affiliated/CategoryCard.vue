@@ -41,24 +41,50 @@ export default {
 <style scoped>
 
 .category-container {
-  border: solid 1px #707070;
   max-width: 30vw;
   max-height: 30vw;
-  min-height: 30vw;
+  min-height: 110px;
+  min-width: 110px;
+}
+
+@media (min-width: 400px) {
+  .category-container {
+    max-width: 30vw;
+    max-height: 30vw;
+    min-height: 140px;
+    min-width: 140px;
+  }
 }
 
 @media (min-width: 500px) {
   .category-container {
-    border: solid 1px red;
-    max-width: 25vw;
-    max-height: 25vw;
-    min-height: 25vw;
+    max-width: 16vw;
+    max-height: 16vw;
+    min-height: 180px;
+    min-width: 180px;
+  }
+}
+
+
+@media (min-width: 595px) {
+  .category-container {
+    max-width: 16vw;
+    max-height: 16vw;
+    min-height: 200px;
+    min-width: 200px;
+  }
+}
+@media (min-width: 760px) {
+  .category-container {
+    max-width: 16vw;
+    max-height: 16vw;
+    min-height: 185px;
+    min-width: 185px;
   }
 }
 
 @media (min-width: 950px) {
   .category-container {
-    border: solid 1px greenyellow;
     max-width: 16vw;
     max-height: 16vw;
     min-height: 210px;
@@ -68,7 +94,6 @@ export default {
 
 @media (min-width: 1450px) {
   .category-container {
-    border: solid 1px #707070;
     max-width: 16vw;
     max-height: 16vw;
     min-height: 230px;
@@ -85,6 +110,7 @@ export default {
 }
 
 .card {
+  border: solid 1px #707070;
   background-color: transparent;
   color: #707070;
   stroke: #47745b;
