@@ -40,18 +40,25 @@ export default {
 
 <style scoped>
 
-@media (min-width: 1450px) {
+.category-container {
+  border: solid 1px #707070;
+  max-width: 30vw;
+  max-height: 30vw;
+  min-height: 30vw;
+}
+
+@media (min-width: 500px) {
   .category-container {
-    border: solid 1px #707070;
-    max-width: 16vw;
-    max-height: 16vw;
-    min-height: 16vw;
+    border: solid 1px red;
+    max-width: 25vw;
+    max-height: 25vw;
+    min-height: 25vw;
   }
 }
 
-@media (min-width: 950px) and (max-width: 1450px) {
+@media (min-width: 950px) {
   .category-container {
-    border: solid 1px #707070;
+    border: solid 1px greenyellow;
     max-width: 16vw;
     max-height: 16vw;
     min-height: 210px;
@@ -59,15 +66,17 @@ export default {
   }
 }
 
-@media (max-width: 950px) {
+@media (min-width: 1450px) {
   .category-container {
     border: solid 1px #707070;
     max-width: 16vw;
     max-height: 16vw;
-    min-height: 182px;
-    min-width: 182px;
+    min-height: 230px;
+    min-width: 210px;
   }
 }
+
+
 
 .category-heading {
   font-family: "Roboto Condensed", sans-serif;

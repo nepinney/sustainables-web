@@ -1,7 +1,7 @@
 <template>
   <div class='relative'>
 
-      <div class='flex flex-col pl-10 pr-10 w-full xl:w-1/2'>
+      <div class='flex flex-col pl-4 pr-4 md:pl-10 md:pr-10 w-full xl:w-1/2'>
 
         <div class='text-container header flex p-8 lg:p-16'>
           <p class='text-2xl lg:text-3xl text-gray'>FEEL GOOD ABOUT WHAT YOU BUY.</p>
