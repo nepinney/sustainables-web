@@ -2,7 +2,7 @@
   <div class='grid grid-cols-1 grid-rows-1'>
 
     <div v-if='getActiveProduct !== null' class='flex flex-col justify-center'>
-      <img v-if='getActiveProduct' :src="activeProductImage" width='42rem'>
+      <img v-if='getActiveProduct' :src="activeProductImage" width='100%'>
 <!--      <img :src='require(`../../assets/images/${getActiveProduct.img}`)' :alt='getActiveProduct.alt' width='42rem'>-->
 <!--      <svg style='border: solid 1px black' viewBox="0 0 130.08 128.69" width='42rem' height='42rem'>-->
 <!--        <defs><style>.cls-1,.cls-3{fill:none;}.cls-1{stroke:#47745b;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.3px;}.cls-2{fill:#47745b;}.cls-3{stroke:#000;stroke-miterlimit:10;stroke-width:0.5px;}</style></defs>-->
