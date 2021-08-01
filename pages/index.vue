@@ -1,5 +1,5 @@
 <template>
-  <div class='relative'>
+  <div class='relative z-0'>
 
       <div class='flex flex-col pl-4 pr-4 md:pl-10 md:pr-10 w-full xl:w-1/2'>
 
