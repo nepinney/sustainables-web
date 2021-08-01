@@ -1,6 +1,7 @@
 export const state = () => ({
   allProducts: [],
   activeProduct: 0,
+  navMenuActive: false,
 })
 
 export const mutations = {
@@ -14,6 +15,9 @@ export const mutations = {
     // }
     // else
     state.activeProduct = product
+  },
+  setNavMenuActive(state, active) {
+    state.navMenuActive = active
   },
 }
 
