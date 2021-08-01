@@ -20,7 +20,7 @@
       </div>
 
       <div class='flex flex-col w-1/2 hidden xl:block'></div>
-      <video class='hidden absolute overflow-x-hidden xl:block xl:max-w-7xl 2xl:max-w-6xl' autoplay loop>
+      <video class='hidden absolute overflow-x-hidden xl:block xl:max-w-7xl 2xl:max-w-6xl' autoplay muted loop>
         <source class='overflow-x-hidden' src='~/assets/videos/waves.mp4' type='video/mp4'>
       </video>
 
