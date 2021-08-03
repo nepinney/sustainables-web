@@ -13,9 +13,9 @@
       <div class='flex justify-center text-center'>
         <ul class='list-none m-0 text-gray-light font-custom'>
           <li class='m-2'><NuxtLink to='/'>Home</NuxtLink></li>
-          <li class='m-2'><NuxtLink to='/'>Shop</NuxtLink></li>
-          <li class='m-2'><NuxtLink to='/'>Our Story</NuxtLink></li>
-          <li class='m-2'><NuxtLink to='/'>Contact</NuxtLink></li>
+          <li class='m-2'><NuxtLink to='shop'>Shop</NuxtLink></li>
+          <li class='m-2'><NuxtLink to='ourStory'>Our Story</NuxtLink></li>
+          <li class='m-2'><NuxtLink to='contact'>Contact</NuxtLink></li>
         </ul>
       </div>
       <div class='flex justify-end items-center'>
