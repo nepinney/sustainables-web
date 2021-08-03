@@ -1,6 +1,8 @@
 <template>
   <div class='w-full'>
-    <FavouriteItems />
+    <h1 class='text-center pb-6'>OUR FAVOURITES</h1>
+    <ProductCarousel :products='favouriteProducts' />
+<!--    <FavouriteItems />-->
 
 <!--    Categories -->
     <section class='w-full pl-0 pr-0 md:pl-14 md:pr-14 lg:pl-20 lg:pr-20'>
@@ -25,13 +27,20 @@
 </template>
 
 <script>
-import FavouriteItems from '../components/product-affiliated/FavouriteItems'
+// import FavouriteItems from '../components/product-affiliated/FavouriteItems'
 import CategoryCard from '../components/product-affiliated/CategoryCard'
+import ProductCarousel from '../components/ProductCarousel'
 export default {
-  components: { CategoryCard, FavouriteItems },
+  components: { ProductCarousel, CategoryCard },
   layout: 'Secondary',
   async asyncData({ $content, store }) {
     const products = await $content('products').fetch()
+    const favouriteProducts = []
+    await products.forEach(product => {
+      if (product.tags.includes('favourite'))
+        favouriteProducts.push(product)
+    })
+    // console.log('Favs:', favouriteProducts)
     const categories = await $content('categories')
       .sortBy('order', 'asc')
       .fetch()
@@ -39,6 +48,7 @@ export default {
     store.commit('setProductList', await products)
     // console.log('In product.vue: ', await products)
     return {
+      favouriteProducts,
       categories
     }
   },
