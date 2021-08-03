@@ -3,9 +3,11 @@
 
     <Navbar />
 
-    <main class='flex w-full pt-36'>
+    <main class='flex w-full pt-36 pb-4 lg:pb-8'>
       <Nuxt/>
     </main>
+
+    <AppFooter />
 
   </div>
 </template>

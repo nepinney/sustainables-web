@@ -7,12 +7,14 @@
       <Nuxt/>
     </main>
 
+    <AppFooter />
+
   </div>
 </template>
 
 <script>
 export default {
-  name: 'MainLayout'
+  name: 'MainLayout',
 }
 </script>
 

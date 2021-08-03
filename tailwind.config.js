@@ -27,6 +27,9 @@ module.exports = {
         dark: '#3A5D4A',
       },
     },
+    fontFamily: {
+      custom: ['Roboto Condensed', 'sans-serif'],
+    },
     extend: {
       backgroundImage: theme => ({
         'trees': "url('~/assets/images/trees.jpeg')",
