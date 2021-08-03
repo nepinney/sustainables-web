@@ -9,13 +9,10 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    screens: {
-      'xs': '440px',
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
+    extend: {
+      screens: {
+        'xs': '440px',
+      },
     },
     colors: {
       gray: {
@@ -29,11 +26,6 @@ module.exports = {
     },
     fontFamily: {
       custom: ['Roboto Condensed', 'sans-serif'],
-    },
-    extend: {
-      backgroundImage: theme => ({
-        'trees': "url('~/assets/images/trees.jpeg')",
-      })
     },
   },
   variants: {
