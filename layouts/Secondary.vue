@@ -1,9 +1,9 @@
 <template>
-  <div id="page" class='w-full h-full lg:pl-16 lg:pr-16'>
+  <div class='w-full h-full lg:pl-16 lg:pr-16'>
 
     <Navbar />
 
-    <main class='flex w-full pt-36 pb-4 lg:pb-8'>
+    <main class='flex w-full pt-24 pb-4 lg:pb-8 bg-gray-light' >
       <Nuxt/>
     </main>
 
@@ -14,7 +14,31 @@
 
 <script>
 export default {
-  name: 'Secondary'
+  name: 'Secondary',
+  // data() {
+  //   return {
+  //     offset: 0,
+  //   }
+  // },
+  // computed: {
+  //   calculateHeightOffset() {
+  //     return `padding-top: ${this.offset}px`
+  //   }
+  // },
+  // mounted() {
+  //   this.$nextTick(function () {
+  //     // Code that will run only after the
+  //     // entire view has been rendered
+  //     this.matchHeight()
+  //   })
+  // },
+  // methods: {
+  //   matchHeight() {
+  //     const height = this.$refs.navbar.clientHeight
+  //     this.offset = height.clientHeight + 12
+  //     console.log(this.offset)
+  //   }
+  // }
 }
 </script>
 
