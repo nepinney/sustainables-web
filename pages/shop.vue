@@ -1,25 +1,21 @@
 <template>
   <div class='w-full'>
-    <h1 class='text-center pb-6'>OUR FAVOURITES</h1>
+    <p class='font-custom font-bold text-sm text-center pb-phone text-gray tracking-wider'>OUR FAVOURITES</p>
+
     <ProductCarousel :products='favouriteProducts' />
 <!--    <FavouriteItems />-->
 
 <!--    Categories -->
-    <section class='w-full pl-0 pr-0 md:pl-14 md:pr-14 lg:pl-20 lg:pr-20'>
-      <h1 class='text-center pt-10 pb-10'>CATEGORIES</h1>
-      <div class='pl-6 pr-6 md:pl-12 md:pr-12 md:p-0 grid grid-cols-2 grid-auto-rows md:grid-cols-3 md:grid-rows-1 gap-y-10 md:gap-y-12'>
-<!--      <div class='grid grid-cols-1 grid-rows-3 md:grid-cols-3 md:grid-rows-1 md:flex-row md:justify-evenly'>-->
+    <p class='font-custom font-bold text-sm text-center pb-phone text-gray tracking-wider'>CATEGORIES</p>
+
+    <section class='w-full pb-phone pl-0 pr-0 md:pl-14 md:pr-14 lg:pl-20 lg:pr-20'>
+      <div class='grid grid-cols-2 grid-auto-rows md:grid-cols-3 md:grid-rows-1 gap-y-10 md:gap-y-12'>
         <div v-for='category in categories' :key='category.title' class='flex justify-center'>
           <CategoryCard
             :svg-h-t-m-l='category.svg'
             :category-name='category.name'
             :apply-transformation='category.translateSVG'></CategoryCard>
         </div>
-
-
-<!--        <div class='flex justify-center'><CategoryCard :svg-h-t-m-l="getGlassesSVG" category-name='Accessories'></CategoryCard></div>-->
-<!--        <div class='flex justify-center'><CategoryCard :svg-h-t-m-l="getShoeSVG" apply-transformation='true' category-name='Shoes'></CategoryCard></div>-->
-<!--        <div class='flex justify-center'><CategoryCard :svg-h-t-m-l="getShirtSVG" apply-transformation='true' category-name='Clothes'></CategoryCard></div>-->
       </div>
     </section>
   </div>
@@ -73,8 +69,6 @@ export default {
 <style scoped>
 
 h1 {
-  font-family: "Roboto Condensed", sans-serif;
-  color: #707070;
   font-weight: 700;
 }
 

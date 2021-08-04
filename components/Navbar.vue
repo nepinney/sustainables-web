@@ -1,10 +1,10 @@
 <template>
-  <nav class='p-4 lg:p-8 fixed top-0 w-full left-0 lg:left-16 z-20'>
+  <nav class='p-4 pt-6 pb-6 lg:p-8 fixed top-0 w-full left-0 lg:left-16 z-20'>
     <div class='grid grid-cols-3'>
       <div class='flex items-center justify-start z-20'>
         <NuxtLink to='/'>
-          <div id='logoBackground' class='flex items-center'>
-            <p class='text-base sm:text-lg md:text-xl pl-0.5 pr-0.5'>SUSTAINABLES</p>
+          <div class='flex items-center bg-green-dark'>
+            <p class='text-xxs sm:text-lg md:text-xl pl-0.5 pr-0.5'>SUSTAINABLES</p>
           </div>
         </NuxtLink>
       </div>
@@ -157,17 +157,16 @@ p {
 #menuIcon {
   fill:none;
   stroke:black;
-  stroke-miterlimit:10;
-  stroke-width:2px;
+  stroke-width:1.5px;
   max-width: 48px;
   transition-duration: 0.3s;
 }
 
 #menuIcon:hover, .menuVectors:hover {
   fill: #BCDBB5;
-  stroke: black;
-  stroke-miterlimit:10;
-  stroke-width:2px;
+  /*stroke: black;*/
+  /*stroke-miterlimit:10;*/
+  /*stroke-width:2px;*/
 }
 
 </style>

@@ -13,10 +13,17 @@ module.exports = {
       screens: {
         'xs': '440px',
       },
+      fontSize: {
+        'xxs': '.65rem',
+      },
+      spacing: {
+        'phone': '2rem'
+      }
     },
     colors: {
       gray: {
-        light: '#F6F6F6',
+        light: 'white',
+        // light: '#F6F6F6',
         DEFAULT: '#707070',
       },
       green: {

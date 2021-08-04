@@ -1,7 +1,7 @@
 <template>
   <div class='carousel-wrapper'>
 
-    <div class='carousel_markers flex flex-row justify-center items-center'>
+    <div class='carousel_markers flex flex-row justify-center items-center pb-phone'>
       <div
         v-for='i in products.length'
         :key='i'
@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class='carousel flex flex-col'>
+    <div class='carousel flex flex-col pb-phone'>
 
       <div
         v-for='(product, i) in products'
@@ -75,14 +75,14 @@ export default {
     border: solid 1px #707070;
     background-color: transparent;
     border-radius: 100%;
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     margin: 3px;
     cursor: pointer;
     transition: background-color .5s;
   }
   .marker.active {
-    background-color: #707070;
+    background-color: #47745B;
   }
   .carousel {
     -webkit-transform-style: preserve-3d;
@@ -95,7 +95,6 @@ export default {
     top:0;
     width: 100%;
     margin: auto;
-    padding: 2rem 0rem;
     z-index: 100;
     transition: transform .5s, opacity .5s, z-index .5s;
   }

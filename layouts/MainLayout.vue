@@ -1,9 +1,9 @@
 <template>
-  <div id="page" class='w-full h-full lg:pl-16 lg:pr-16'>
+  <div class='w-full h-full lg:pl-16 lg:pr-16 bg-green'>
 
     <HomeHeader />
 
-    <main class='flex flex-row pt-16 xl:pt-28'>
+    <main class='flex flex-row pt-16 xl:pt-28 bg-gray-light'>
       <Nuxt/>
     </main>
 
@@ -27,11 +27,11 @@ export default {
     overflow-x: hidden !important;
   }
 
-  #page {
-    background-color: #47745B;
-  }
+  /*#page {*/
+  /*  background-color: #47745B;*/
+  /*}*/
 
-  main{
-    background-color: #f6f6f6;
-  }
+  /*main{*/
+  /*  background-color: #f6f6f6;*/
+  /*}*/
 </style>
