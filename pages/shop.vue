@@ -5,19 +5,24 @@
     <ProductCarousel :products='favouriteProducts' />
 <!--    <FavouriteItems />-->
 
-<!--    Categories -->
     <p class='font-custom font-bold text-sm text-center pb-phone text-gray tracking-wider'>CATEGORIES</p>
 
-    <section class='w-full pb-phone pl-0 pr-0 md:pl-14 md:pr-14 lg:pl-20 lg:pr-20'>
-      <div class='grid grid-cols-2 grid-auto-rows md:grid-cols-3 md:grid-rows-1 gap-y-10 md:gap-y-12'>
-        <div v-for='category in categories' :key='category.title' class='flex justify-center'>
+<!--    Categories pl-0 pr-0 md:pl-14 md:pr-14 lg:pl-20 lg:pr-20 -->
+    <div class='w-10/12 pb-phone m-auto'>
+<!--     md:grid-cols-3 md:grid-rows-1 gap-y-10 md:gap-y-12 -->
+      <div class='grid grid-cols-2 grid-auto-rows gap-y-4 gap-x-4'>
+        <div v-for='category in categories' :key='category.title' class='flex'>
           <CategoryCard
-            :svg-h-t-m-l='category.svg'
+            :svg='category.svgFile'
+            :svg-hover='category.svgHoverFile'
             :category-name='category.name'
             :apply-transformation='category.translateSVG'></CategoryCard>
         </div>
       </div>
-    </section>
+
+      <ProductList :category='getActiveCategory' />
+
+    </div>
   </div>
 
 </template>
@@ -26,11 +31,13 @@
 // import FavouriteItems from '../components/product-affiliated/FavouriteItems'
 import CategoryCard from '../components/product-affiliated/CategoryCard'
 import ProductCarousel from '../components/ProductCarousel'
+import ProductList from '../components/ProductList'
 export default {
-  components: { ProductCarousel, CategoryCard },
+  components: { ProductList, ProductCarousel, CategoryCard },
   layout: 'Secondary',
   async asyncData({ $content, store }) {
     const products = await $content('products').fetch()
+
     const favouriteProducts = []
     await products.forEach(product => {
       if (product.tags.includes('favourite'))
@@ -45,12 +52,16 @@ export default {
     // console.log('In product.vue: ', await products)
     return {
       favouriteProducts,
-      categories
+      categories,
+      products
     }
   },
   computed: {
     getProducts() {
       return this.$store.getters.getFavourites()
+    },
+    getActiveCategory() {
+      return this.$store.state.activeCategory
     }
   },
   mounted() {
@@ -70,6 +81,10 @@ export default {
 
 h1 {
   font-weight: 700;
+}
+.card-grid__wrapper {
+  width: 85%;
+  justify-content: center;
 }
 
 </style>
