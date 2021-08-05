@@ -7,7 +7,7 @@
         :key='i'
         class='marker'
         :class="{'active': i === active+1}"
-        @click='next(i-1)'
+        @click='goto(i-1)'
       >
       </div>
     </div>
@@ -18,7 +18,7 @@
         v-for='(product, i) in products'
         :key='product.title'
         class='carousel_item flex flex-col'
-        :class="{'initial active': i === active}"
+        :class="{'active': i === active, 'prev': i === previousIndex, 'next': i === nextIndex}"
       >
         <img class='carousel_photo' :src='require(`~/assets/images/${product.img}`)' :alt='product.alt'>
 
@@ -35,7 +35,15 @@
         </div>
 
       </div>
+
+      <div class='arrow_button--prev' @click='previous()'>
+<!--        <img class='h-12' src='~/assets/images/icons/arrows/light-left.svg' />-->
+      </div>
+      <div class='arrow_button--next' @click='next()'>
+<!--        <img class='arrow_button&#45;&#45;next' src='~/assets/images/icons/arrows/light-right.svg' />-->
+      </div>
     </div>
+
   </div>
 </template>
 
@@ -47,17 +55,41 @@ export default {
   },
   data() {
     return {
-      active: 0
+      active: 0,
+      previousIndex: this.products.length-1,
+      nextIndex: 1,
     }
   },
   methods: {
-    next(index) {
-      this.active = index
-      console.log('Hi', index)
+    next() {
+      this.active = this.nextIndex
+      this.previousIndex = this.getPrevious()
+      this.nextIndex = this.getNext()
     },
-    swiped() {
-      console.log("I was sooo swiped bitch")
-    }
+    previous() {
+      this.active = this.previousIndex
+      this.previousIndex = this.getPrevious()
+      this.nextIndex = this.getNext()
+    },
+    getPrevious() {
+      const firstIndex = 0
+      if (this.active === firstIndex)
+        return this.products.length - 1
+      else
+        return this.active - 1
+    },
+    getNext() {
+      const lastIndex = this.products.length - 1
+      if (this.active === lastIndex)
+        return 0
+      else
+        return this.active + 1
+    },
+    goto(index) {
+      this.active = index
+      this.previousIndex = this.getPrevious()
+      this.nextIndex = this.getNext()
+    },
   },
 }
 </script>
@@ -85,35 +117,67 @@ export default {
     background-color: #47745B;
   }
   .carousel {
+    /*border: 1px solid red;*/
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
   .carousel_item {
-    border: solid 1px black;
+    /*border: solid 1px black;*/
     opacity: 0;
     position: absolute;
+    padding: 0rem 4rem;
     top:0;
     width: 100%;
     margin: auto;
     z-index: 100;
     transition: transform .5s, opacity .5s, z-index .5s;
   }
-  .carousel_item.initial {
+  .carousel_item.initial,
+  .carousel_item.active {
     opacity: 1;
     position: relative;
     z-index: 900;
   }
-  .carousel__photo.prev,
-  .carousel__photo.next {
+  .carousel_item.prev,
+  .carousel_item.next {
     z-index: 800;
   }
   /* Translate previous item to the left */
-  .carousel__photo.prev {
+  .carousel_item.prev {
     transform: translateX(-100%);
   }
   /* Translate next item to the right */
-  .carousel__photo.next {
+  .carousel_item.next {
     transform: translateX(100%);
+  }
+
+  .arrow_button--prev,
+  .arrow_button--next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /*border:1px solid black;*/
+    width: 1.5rem;
+    height: 3rem;
+    z-index: 1000;
+  }
+
+  .arrow_button--prev {
+    background-image: url("../assets/images/icons/arrows/light-left.svg");
+    background-repeat: no-repeat;
+    left: 0;
+  }
+  .arrow_button--prev:hover {
+    background-image: url("../assets/images/icons/arrows/heavy-left.svg");
+  }
+  .arrow_button--next {
+    background-image: url("../assets/images/icons/arrows/light-right.svg");
+    background-repeat: no-repeat;
+    right: 0;
+  }
+  .arrow_button--next:hover {
+    background-image: url("../assets/images/icons/arrows/heavy-right.svg");
   }
 
 </style>
