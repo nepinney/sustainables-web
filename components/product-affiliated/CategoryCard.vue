@@ -134,7 +134,7 @@ export default {
   border: solid 1px #707070;
   background-color: transparent;
   color: #707070;
-  border-radius: 25px;
+  border-radius: 5%;
   z-index: 10;
   transition: all 3s;
 }
@@ -153,7 +153,7 @@ export default {
 }
 
 img {
-  border-radius: 25px;
+  border-radius: 4%;
 }
 
 .text-wrapper {

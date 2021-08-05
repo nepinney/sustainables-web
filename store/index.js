@@ -1,6 +1,6 @@
 export const state = () => ({
   allProducts: [],
-  activeCategory: 0,
+  activeCategory: null,
   navMenuActive: false,
 })
 
