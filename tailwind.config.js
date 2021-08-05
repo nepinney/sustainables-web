@@ -30,6 +30,9 @@ module.exports = {
         DEFAULT: '#47745b',
         dark: '#3A5D4A',
       },
+      beige: {
+        DEFAULT: '#EFECE8'
+      }
     },
     fontFamily: {
       custom: ['Roboto Condensed', 'sans-serif'],

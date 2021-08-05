@@ -3,7 +3,7 @@
 
     <Navbar />
 
-    <main class='flex w-full pt-24 pb-4 lg:pb-8 bg-gray-light' >
+    <main class='flex w-full pt-24 lg:pb-8 bg-gray-light' >
       <Nuxt/>
     </main>
 

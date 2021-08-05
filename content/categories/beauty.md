@@ -1,8 +1,8 @@
 ---
-name: Footwear
-order: 1
-svgFile: icons/categories/categoryIcons_Shoe.svg
-svgHoverFile: icons/categories/categoryIcons-hover_Shoe.svg
+name: Beauty
+order: 4
+svgFile: icons/categories/categoryIcons_Glasses.svg
+svgHoverFile: icons/categories/categoryIcons-hover_Glasses.svg
 svg: <svg viewBox='0 0 68.47 55.63' width='100%'> 
       <defs><style>.shoe{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.3px;}</style></defs> 
       <g> 

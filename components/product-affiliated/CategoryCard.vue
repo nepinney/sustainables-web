@@ -1,38 +1,60 @@
 <template>
-  <div class='card category-container flex justify-center items-end'>
-    <div class='flex-col w-1/2 h-full'>
+  <div class='relative w-full'>
+    <div class='card-container w-full flex justify-center'
+         :class="{'active': getActiveCategory === categoryName}"
+         @mouseover='hoverStyle()'
+         @mouseleave='defaultStyle()'
+         @click='activateCategory()'
+    >
+  <!--  h-full  -->
+      <div class='flex w-full'>
 
-      <div class='flex items-end h-1/2'>
-        <div :style='imageStyle' v-html='svgHTML'></div>
+        <img v-if='hovering === false && getActiveCategory !== categoryName' :src='require(`~/assets/images/${svg}`)'>
+        <img v-if='hovering === true || getActiveCategory === categoryName' :src='require(`~/assets/images/${svgHover}`)'>
+  <!--      <div class='flex items-end h-1/2'>-->
+  <!--        <div :style='imageStyle' v-html='svgHTML'></div>-->
+  <!--      </div>-->
+
+        <div class='text-wrapper absolute top-3/4 left-1/2'>
+          <p
+            class='font-custom font-extralight text-gray text-base text-center tracking-wider'
+            :class="{'text-beige' : hovering === true || getActiveCategory === categoryName }"
+          >
+            {{ categoryName }}</p>
+        </div>
+
       </div>
-
-      <div class='flex justify-center items-center h-1/2'>
-        <h1 class='category-heading text-center'>{{ categoryName }}</h1>
-      </div>
-
     </div>
   </div>
 </template>
 
 <script>
-import $ from 'jquery';
 export default {
   name: 'CategoryCard',
   props: {
-    svgHTML: String(),
+    svg: String(),
+    svgHover: String(),
     categoryName: String(),
-    applyTransformation: Boolean(false),
+  },
+  data() {
+    return {
+      hovering: false
+    }
   },
   computed: {
-    imageStyle() {
-      return `transform: ${this.applyTransformation ? "translate(0, 25%)" : "none"}`
+    getActiveCategory() {
+      return this.$store.state.activeCategory;
     }
   },
   methods: {
-    applyOtherStyles() {
-      const iconSelector = this.categoryName.toLowerCase()
-      console.log(iconSelector)
-      $( iconSelector ).css('stroke', '#F6F6F6')
+    hoverStyle() {
+      this.hovering = true
+    },
+    defaultStyle() {
+      this.hovering = false
+    },
+    activateCategory() {
+      this.$store.commit('setActiveCategory', this.categoryName)
     }
   }
 }
@@ -47,82 +69,97 @@ export default {
   min-width: 110px;
 }
 
-@media (min-width: 400px) {
-  .category-container {
-    max-width: 30vw;
-    max-height: 30vw;
-    min-height: 140px;
-    min-width: 140px;
-  }
-}
+/*@media (min-width: 400px) {*/
+/*  .category-container {*/
+/*    max-width: 30vw;*/
+/*    max-height: 30vw;*/
+/*    min-height: 140px;*/
+/*    min-width: 140px;*/
+/*  }*/
+/*}*/
 
-@media (min-width: 500px) {
-  .category-container {
-    max-width: 16vw;
-    max-height: 16vw;
-    min-height: 180px;
-    min-width: 180px;
-  }
-}
-
-
-@media (min-width: 595px) {
-  .category-container {
-    max-width: 16vw;
-    max-height: 16vw;
-    min-height: 200px;
-    min-width: 200px;
-  }
-}
-@media (min-width: 760px) {
-  .category-container {
-    max-width: 16vw;
-    max-height: 16vw;
-    min-height: 185px;
-    min-width: 185px;
-  }
-}
-
-@media (min-width: 950px) {
-  .category-container {
-    max-width: 16vw;
-    max-height: 16vw;
-    min-height: 210px;
-    min-width: 210px;
-  }
-}
-
-@media (min-width: 1450px) {
-  .category-container {
-    max-width: 16vw;
-    max-height: 16vw;
-    min-height: 230px;
-    min-width: 210px;
-  }
-}
+/*@media (min-width: 500px) {*/
+/*  .category-container {*/
+/*    max-width: 16vw;*/
+/*    max-height: 16vw;*/
+/*    min-height: 180px;*/
+/*    min-width: 180px;*/
+/*  }*/
+/*}*/
 
 
+/*@media (min-width: 595px) {*/
+/*  .category-container {*/
+/*    max-width: 16vw;*/
+/*    max-height: 16vw;*/
+/*    min-height: 200px;*/
+/*    min-width: 200px;*/
+/*  }*/
+/*}*/
+/*@media (min-width: 760px) {*/
+/*  .category-container {*/
+/*    max-width: 16vw;*/
+/*    max-height: 16vw;*/
+/*    min-height: 185px;*/
+/*    min-width: 185px;*/
+/*  }*/
+/*}*/
 
-.category-heading {
-  font-family: "Roboto Condensed", sans-serif;
-  /*color: #707070;*/
-  font-weight: 400;
-}
+/*@media (min-width: 950px) {*/
+/*  .category-container {*/
+/*    max-width: 16vw;*/
+/*    max-height: 16vw;*/
+/*    min-height: 210px;*/
+/*    min-width: 210px;*/
+/*  }*/
+/*}*/
 
-.card {
+/*@media (min-width: 1450px) {*/
+/*  .category-container {*/
+/*    max-width: 16vw;*/
+/*    max-height: 16vw;*/
+/*    min-height: 230px;*/
+/*    min-width: 210px;*/
+/*  }*/
+/*}*/
+
+/*.category-heading {*/
+/*  font-family: "Roboto Condensed", sans-serif;*/
+/*  !*color: #707070;*!*/
+/*  font-weight: 400;*/
+/*}*/
+
+.card-container {
+  opacity: 100;
   border: solid 1px #707070;
   background-color: transparent;
   color: #707070;
-  stroke: #47745b;
+  border-radius: 5%;
+  z-index: 10;
+  transition: all 3s;
 }
 
-.card:hover {
+.card-container:hover{
   border-color: #47745b;
-  background-color: #47745b;
-  color: #F6F6F6;
-  stroke: #f6f6f6;
   cursor: pointer;
 }
+
+.card-container.active{
+  position: absolute;
+  /*left: 110px;*/
+  opacity: 0;
+  transform: translate(50%, 100%);
+  z-index: -1;
+}
+
+img {
+  border-radius: 4%;
+}
+
+.text-wrapper {
+  transform: translate(-50%, 0);
+}
+
 
 .card:active {
   border-color: #47745b;

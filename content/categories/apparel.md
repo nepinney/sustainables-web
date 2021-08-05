@@ -1,6 +1,8 @@
 ---
 name: Apparel
 order: 2
+svgFile: icons/categories/categoryIcons_Shirt.svg
+svgHoverFile: icons/categories/categoryIcons-hover_Shirt.svg
 svg: <svg viewBox='0 0 77.78 71.67' width='100%'> 
       <defs><style>.tshirt{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.3px;}</style></defs> 
       <g> 

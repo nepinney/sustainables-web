@@ -1,6 +1,8 @@
 ---
 name: Accessories
 order: 0
+svgFile: icons/categories/categoryIcons_Glasses.svg
+svgHoverFile: icons/categories/categoryIcons-hover_Glasses.svg
 svg: <svg viewBox='0 0 68.47 28.25' width='100%'> 
       <defs><style>.accessories{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.3px;}</style></defs> 
       <g> 

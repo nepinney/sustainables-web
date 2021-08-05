@@ -1,6 +1,6 @@
 export const state = () => ({
   allProducts: [],
-  activeProduct: 0,
+  activeCategory: null,
   navMenuActive: false,
 })
 
@@ -8,13 +8,13 @@ export const mutations = {
   setProductList(state, products) {
     state.allProducts = products
   },
-  setActiveProduct(state, product) {
+  setActiveCategory(state, category) {
     // if (product === null) {
     //   console.log('GETTING FAVS:', this.$store.getters.getFavourites)
     //   state.activeProduct = (this.$store.getters.getFavourites)[0]
     // }
     // else
-    state.activeProduct = product
+    state.activeCategory = category
   },
   setNavMenuActive(state, active) {
     state.navMenuActive = active
