@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class='grid grid-cols-3 bg-green pt-phone pb-phone'>
+    <div class='grid grid-cols-3 bg-green pt-phone pb-phone pl-4 pr-4 lg:pb-laptop lg:pt-laptop lg:pr-0 lg:pr-0 '>
       <div class='flex flex-col justify-start items-start'>
         <div class='mt-4 text-center bg-gray-light'>
           <p id='logo' class='text-green-dark text-base sm:text-lg md:text-xl pl-0.5 pr-0.5'>SUSTAINABLES</p>

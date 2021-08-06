@@ -17,7 +17,9 @@ module.exports = {
         'xxs': '.65rem',
       },
       spacing: {
-        'phone': '2rem'
+        'phone': '2rem',
+        'laptop': '4rem',
+        '30': '7.5rem'
       }
     },
     colors: {

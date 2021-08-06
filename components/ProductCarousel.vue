@@ -1,7 +1,7 @@
 <template>
   <div class='carousel-wrapper'>
 
-    <div class='carousel_markers flex flex-row justify-center items-center pb-phone'>
+    <div class='flex flex-row justify-center items-center pb-phone'>
       <div
         v-for='i in products.length'
         :key='i'
@@ -33,15 +33,11 @@
             </div>
           </div>
         </div>
-
       </div>
 
-      <div class='arrow_button--prev' @click='previous()'>
-<!--        <img class='h-12' src='~/assets/images/icons/arrows/light-left.svg' />-->
-      </div>
-      <div class='arrow_button--next' @click='next()'>
-<!--        <img class='arrow_button&#45;&#45;next' src='~/assets/images/icons/arrows/light-right.svg' />-->
-      </div>
+      <div class='arrow_button--prev' @click='previous()'></div>
+      <div class='arrow_button--next' @click='next()'></div>
+
     </div>
 
   </div>

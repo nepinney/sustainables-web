@@ -20,6 +20,7 @@ export default {
 
 <style>
   * {
+    -webkit-tap-highlight-color: transparent;
     box-sizing: border-box;
   }
 

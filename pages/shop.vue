@@ -1,28 +1,34 @@
 <template>
-  <div class='w-full'>
-    <p class='font-custom font-bold text-sm text-center pb-phone text-gray tracking-wider'>OUR FAVOURITES</p>
+  <div class='w-full 2xl:grid 2xl:grid-cols-7'>
+    <div class='2xl:col-span-4 flex-col'>
+      <p class='font-custom font-bold text-sm text-center pb-phone lg:pb-laptop text-gray tracking-wider'>OUR FAVOURITES</p>
 
-    <ProductCarousel :products='favouriteProducts' />
-<!--    <FavouriteItems />-->
-
-    <p class='font-custom font-bold text-sm text-center pb-phone text-gray tracking-wider'>CATEGORIES</p>
-
-<!--    Categories pl-0 pr-0 md:pl-14 md:pr-14 lg:pl-20 lg:pr-20 -->
-    <div class='w-10/12 pb-phone m-auto'>
-<!--     md:grid-cols-3 md:grid-rows-1 gap-y-10 md:gap-y-12 -->
-      <div class='grid grid-cols-2 grid-auto-rows gap-y-4 gap-x-4'>
-        <div v-for='category in categories' :key='category.title' class='flex'>
-          <CategoryCard
-            :svg='category.svgFile'
-            :svg-hover='category.svgHoverFile'
-            :category-name='category.name'
-            :apply-transformation='category.translateSVG'></CategoryCard>
-        </div>
-      </div>
-
-      <ProductList :category='getActiveCategory' />
-
+      <ProductCarousel :products='favouriteProducts' />
     </div>
+
+
+    <div class='2xl:col-span-3 flex-col'>
+      <p class='font-custom font-bold text-sm text-center pb-phone lg:pb-laptop text-gray tracking-wider'>CATEGORIES</p>
+
+      <!--    Categories pl-0 pr-0 md:pl-14 md:pr-14 lg:pl-20 lg:pr-20 -->
+      <div class='w-10/12 pb-phone lg:pb-laptop m-auto'>
+        <!--     md:grid-cols-3 md:grid-rows-1 gap-y-10 md:gap-y-12 -->
+        <div class='cards grid grid-cols-2 grid-auto-rows gap-y-4 gap-x-4 2xl:mt-'>
+          <div v-for='category in categories' :key='category.title' class='flex'>
+            <CategoryCard
+              :svg='category.svgFile'
+              :svg-hover='category.svgHoverFile'
+              :svg-active='category.svgActiveFile'
+              :category-name='category.name'
+              :apply-transformation='category.translateSVG'></CategoryCard>
+          </div>
+        </div>
+
+        <ProductList :category='getActiveCategory' />
+
+      </div>
+    </div>
+
   </div>
 
 </template>
@@ -82,9 +88,12 @@ export default {
 h1 {
   font-weight: 700;
 }
-.card-grid__wrapper {
-  width: 85%;
-  justify-content: center;
+
+@media (min-width: 1536px) {
+  .cards {
+    margin-top: calc(2rem + 12px)
+  }
 }
+
 
 </style>

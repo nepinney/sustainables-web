@@ -1,9 +1,10 @@
 <template>
-  <div class='w-full h-full lg:pl-16 lg:pr-16'>
+  <div class='w-full h-full lg:pl-6 lg:pr-6 bg-green'>
 
     <Navbar />
 
-    <main class='flex w-full pt-24 lg:pb-8 bg-gray-light' >
+<!--  Use this padding top for equalness of headings to navbar -- 2xl:pt-30  -->
+    <main class='flex w-full pt-24 2xl:pt-44 bg-gray-light' >
       <Nuxt/>
     </main>
 

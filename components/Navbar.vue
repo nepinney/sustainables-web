@@ -1,5 +1,5 @@
 <template>
-  <nav class='p-4 pt-6 pb-6 lg:p-8 fixed top-0 w-full left-0 lg:left-16 z-20'>
+  <nav class='p-4 pt-6 pb-6 fixed top-0 w-full left-0 lg:left-16 z-20'>
     <div class='grid grid-cols-3'>
       <div class='flex items-center justify-start z-20'>
         <NuxtLink to='/'>
@@ -97,6 +97,12 @@ export default {
 @media (min-width: 1024px) {
   nav {
     width: calc(100vw - 8rem);
+  }
+}
+
+@media (min-width: 1536px) {
+  nav {
+    border-bottom: #47745B 1px solid;
   }
 }
 

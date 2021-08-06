@@ -10,7 +10,8 @@
       <div class='flex w-full'>
 
         <img v-if='hovering === false && getActiveCategory !== categoryName' :src='require(`~/assets/images/${svg}`)'>
-        <img v-if='hovering === true || getActiveCategory === categoryName' :src='require(`~/assets/images/${svgHover}`)'>
+        <img v-if='hovering === true && getActiveCategory !== categoryName' :src='require(`~/assets/images/${svgHover}`)'>
+        <img v-if='getActiveCategory === categoryName' :src='require(`~/assets/images/${svgActive}`)'>
   <!--      <div class='flex items-end h-1/2'>-->
   <!--        <div :style='imageStyle' v-html='svgHTML'></div>-->
   <!--      </div>-->
@@ -18,7 +19,7 @@
         <div class='text-wrapper absolute top-3/4 left-1/2'>
           <p
             class='font-custom font-extralight text-gray text-base text-center tracking-wider'
-            :class="{'text-beige' : hovering === true || getActiveCategory === categoryName }"
+            :class="{'text-beige' : (hovering === true && getActiveCategory !== categoryName) || getActiveCategory === categoryName }"
           >
             {{ categoryName }}</p>
         </div>
@@ -34,6 +35,7 @@ export default {
   props: {
     svg: String(),
     svgHover: String(),
+    svgActive: String(),
     categoryName: String(),
   },
   data() {
@@ -54,6 +56,7 @@ export default {
       this.hovering = false
     },
     activateCategory() {
+      this.hovering = false
       this.$store.commit('setActiveCategory', this.categoryName)
     }
   }
@@ -145,11 +148,12 @@ export default {
 }
 
 .card-container.active{
-  position: absolute;
+  cursor: default;
+  /*position: absolute;*/
   /*left: 110px;*/
-  opacity: 0;
-  transform: translate(50%, 100%);
-  z-index: -1;
+  /*opacity: 0;*/
+  /*transform: translate(50%, 100%);*/
+  /*z-index: -1;*/
 }
 
 img {
