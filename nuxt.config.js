@@ -3,15 +3,18 @@ import webpack from 'webpack';
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'sustainables-webapp',
+    title: 'Sustainables',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { name: 'author', content: 'Nicholas Pinney' },
+      { hid: 'app', name: 'description', content: 'Sustainables promote environmentally concious products from a variety of brands. ' +
+          'Products made from recycled materials, sourced or made locally, to products that aim to replace single use plastics. Our goal is to promote products and brands' +
+          'that reduce our carbon footprint.' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/svg', href: 'logoPost-06.svg' }
     ]
   },
   target: 'static',

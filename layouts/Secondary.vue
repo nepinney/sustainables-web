@@ -1,5 +1,5 @@
 <template>
-  <div class='w-full h-full lg:pl-6 lg:pr-6 bg-green'>
+  <div class='w-full h-full lg:pl-16 lg:pr-16 2xl:pl-6 2xl:pr-6 bg-green'>
 
     <Navbar />
 
@@ -16,30 +16,6 @@
 <script>
 export default {
   name: 'Secondary',
-  // data() {
-  //   return {
-  //     offset: 0,
-  //   }
-  // },
-  // computed: {
-  //   calculateHeightOffset() {
-  //     return `padding-top: ${this.offset}px`
-  //   }
-  // },
-  // mounted() {
-  //   this.$nextTick(function () {
-  //     // Code that will run only after the
-  //     // entire view has been rendered
-  //     this.matchHeight()
-  //   })
-  // },
-  // methods: {
-  //   matchHeight() {
-  //     const height = this.$refs.navbar.clientHeight
-  //     this.offset = height.clientHeight + 12
-  //     console.log(this.offset)
-  //   }
-  // }
 }
 </script>
 

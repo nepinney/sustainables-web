@@ -62,6 +62,19 @@ export default {
       products
     }
   },
+  head() {
+    return {
+      title: 'Sustainables - Shop',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My custom description'
+        }
+      ]
+    }
+  },
   computed: {
     getProducts() {
       return this.$store.getters.getFavourites()

@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       hovering: false,
-      link: 'https://www.instagram.com',
+      link: 'https://www.instagram.com/shop.sustainables/',
     }
   },
   computed: {

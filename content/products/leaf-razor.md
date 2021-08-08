@@ -1,8 +1,8 @@
 ---
-title: Razzy The Razor
+title: Razor
 description: This is the best razor in the world
 price: $50
-img: stock/allBird_two.png
+img: stock/three.jpeg
 alt: A razor
 link: https://www.google.ca
 tags:

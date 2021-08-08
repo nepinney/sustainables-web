@@ -22,14 +22,15 @@
       >
         <img class='carousel_photo' :src='require(`~/assets/images/${product.img}`)' :alt='product.alt'>
 
-        <div class='product_information '>
+        <div class='product_information'>
           <div class='grid grid-cols-2'>
             <div class='inline justify-start'>
-              <h1>{{ product.title }}</h1>
-              <p>{{ product.description }}</p>
+              <h1 class='font-custom font-extrabold text-gray text-lg'>{{ product.title }}</h1>
+              <p class='font-custom text-gray text-base'>{{ product.description }}</p>
             </div>
-            <div>
-              <h1 class='text-right'>{{ product.price }}</h1>
+            <div class='justify-end'>
+              <h1 class='font-custom text-right text-lg text-gray'>{{ product.price }}</h1>
+              <Button>BUY NOW</Button>
             </div>
           </div>
         </div>
@@ -174,6 +175,14 @@ export default {
   }
   .arrow_button--next:hover {
     background-image: url("../assets/images/icons/arrows/heavy-right.svg");
+  }
+  button {
+    border: solid 1px #707070;
+    background-color: #47745B;
+    width: 10rem;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4rem;
   }
 
 </style>

@@ -26,8 +26,8 @@
       <ul class='list-none m-0 text-center'>
         <li class='p-4 lg:p-8 text-4xl lg:text-5xl'><NuxtLink to='/' @click.native='rotateHamburgerAndHideNavLinks()'>Home</NuxtLink></li>
         <li class='p-4 lg:p-8 text-4xl lg:text-5xl'><NuxtLink to='shop' @click.native='rotateHamburgerAndHideNavLinks()'>Shop</NuxtLink></li>
-        <li class='p-4 lg:p-8 text-4xl lg:text-5xl'><NuxtLink to='ourStory' @click.native='rotateHamburgerAndHideNavLinks()'>Our Story</NuxtLink></li>
-        <li class='p-4 lg:p-8 text-4xl lg:text-5xl'><NuxtLink to='contact' @click.native='rotateHamburgerAndHideNavLinks()'>Contact</NuxtLink></li>
+<!--        <li class='p-4 lg:p-8 text-4xl lg:text-5xl'><NuxtLink to='ourStory' @click.native='rotateHamburgerAndHideNavLinks()'>Our Story</NuxtLink></li>-->
+<!--        <li class='p-4 lg:p-8 text-4xl lg:text-5xl'><NuxtLink to='contact' @click.native='rotateHamburgerAndHideNavLinks()'>Contact</NuxtLink></li>-->
       </ul>
     </div>
 
