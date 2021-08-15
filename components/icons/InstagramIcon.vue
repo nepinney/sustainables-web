@@ -1,5 +1,5 @@
 <template>
-  <a :href='link'>
+  <a :href='link' target='_blank'>
 
     <svg viewBox="0 0 23 23" :width='width' :height='height' :style='styleOne'>
       <defs><style>.cls-1{fill:none;stroke-width:1.1px;}.cls-1,.cls-2{stroke-miterlimit:10;}.cls-2{stroke-width:0.55px;}</style></defs>

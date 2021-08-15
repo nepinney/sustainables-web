@@ -20,27 +20,14 @@
         class='carousel_item flex flex-col'
         :class="{'active': i === active, 'prev': i === previousIndex, 'next': i === nextIndex}"
       >
-        <img class='carousel_photo' :src='require(`~/assets/images/${product.img}`)' :alt='product.alt'>
+        <Product :product='product' />
 
-        <div class='product_information'>
-          <div class='grid grid-cols-2'>
-            <div class='inline justify-start'>
-              <h1 class='font-custom font-extrabold text-gray text-lg'>{{ product.title }}</h1>
-              <p class='font-custom text-gray text-base'>{{ product.description }}</p>
-            </div>
-            <div class='justify-end'>
-              <h1 class='font-custom text-right text-lg text-gray'>{{ product.price }}</h1>
-              <Button>BUY NOW</Button>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
 
       <div class='arrow_button--prev' @click='previous()'></div>
       <div class='arrow_button--next' @click='next()'></div>
 
-    </div>
-
+  </div>
   </div>
 </template>
 
@@ -104,8 +91,8 @@ export default {
     border: solid 1px #707070;
     background-color: transparent;
     border-radius: 100%;
-    width: 12px;
-    height: 12px;
+    width: 13px;
+    height: 13px;
     margin: 3px;
     cursor: pointer;
     transition: background-color .5s;
@@ -175,14 +162,6 @@ export default {
   }
   .arrow_button--next:hover {
     background-image: url("../assets/images/icons/arrows/heavy-right.svg");
-  }
-  button {
-    border: solid 1px #707070;
-    background-color: #47745B;
-    width: 10rem;
-    color: white;
-    padding: 0.5rem;
-    border-radius: 4rem;
   }
 
 </style>

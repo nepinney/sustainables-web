@@ -25,7 +25,7 @@ export const actions = {
   async fetchAllProducts(context, $content) {
     const products = await $content('products').fetch()
     context.commit('setProductList', await products)
-    console.log(await products)
+    // console.log(await products)
     // if (products.length > 0)
     //   context.commit('setActiveProduct', products[0])
   }
@@ -39,5 +39,13 @@ export const getters = {
         favourites.push(product)
     })
     return favourites
+  },
+  getCategoryProducts(state) {
+    const categoryProducts = []
+    state.allProducts.forEach(product => {
+      if (product.tags.includes(state.activeCategory.toLowerCase()))
+        categoryProducts.push(product)
+    })
+    return categoryProducts
   }
 }

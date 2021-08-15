@@ -139,16 +139,18 @@ export default {
   color: #707070;
   border-radius: 5%;
   z-index: 10;
-  transition: all 3s;
+  /*transition: all 3s;*/
 }
 
 .card-container:hover{
-  border-color: #47745b;
+  /*border-color: #47745b;*/
+  background-color: #47745B;
   cursor: pointer;
 }
 
 .card-container.active{
   cursor: default;
+  background-color: #3a5d4a;
   /*position: absolute;*/
   /*left: 110px;*/
   /*opacity: 0;*/
@@ -157,7 +159,8 @@ export default {
 }
 
 img {
-  border-radius: 4%;
+  /*border: solid 1px #707070;*/
+  border-radius: 5%;
 }
 
 .text-wrapper {
@@ -165,11 +168,11 @@ img {
 }
 
 
-.card:active {
-  border-color: #47745b;
-  background-color: #47745b;
-  color: #F6F6F6;
-  stroke: #f6f6f6;
-}
+/*.card:active {*/
+/*  border-color: #47745b;*/
+/*  background-color: #47745b;*/
+/*  color: #F6F6F6;*/
+/*  stroke: #f6f6f6;*/
+/*}*/
 
 </style>

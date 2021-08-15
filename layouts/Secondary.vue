@@ -1,5 +1,5 @@
 <template>
-  <div class='w-full h-full lg:pl-16 lg:pr-16 2xl:pl-6 2xl:pr-6 bg-green'>
+  <div class='w-full h-full lg:pl-16 lg:pr-16 bg-green'>
 
     <Navbar />
 
