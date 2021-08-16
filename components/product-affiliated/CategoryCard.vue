@@ -9,9 +9,11 @@
   <!--  h-full  -->
       <div class='flex w-full'>
 
-        <img v-if='hovering === false && getActiveCategory !== categoryName' :src='require(`~/assets/images/${svg}`)'>
-        <img v-if='hovering === true && getActiveCategory !== categoryName' :src='require(`~/assets/images/${svgHover}`)'>
         <img v-if='getActiveCategory === categoryName' :src='require(`~/assets/images/${svgActive}`)'>
+        <img v-else-if='hovering === false && getActiveCategory !== categoryName' :src='require(`~/assets/images/${svg}`)'>
+        <img v-else :src='require(`~/assets/images/${svgHover}`)'>
+<!--        <img v-else='hovering === true && getActiveCategory !== categoryName' :src='require(`~/assets/images/${svgHover}`)'>-->
+<!--        <img v-else :src='require(`~/assets/images/${svgActive}`)'>-->
   <!--      <div class='flex items-end h-1/2'>-->
   <!--        <div :style='imageStyle' v-html='svgHTML'></div>-->
   <!--      </div>-->
