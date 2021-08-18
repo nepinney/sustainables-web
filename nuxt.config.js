@@ -23,7 +23,7 @@ export default {
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'Sustainables - Home'
+        content: 'Sustainables'
       },
       {
         hid: 'og:description',
@@ -34,7 +34,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '/logo.png'
+        content: '/logoWithBanner.png'
       },
       // {
       //   hid: 'og:image:secure_url',
