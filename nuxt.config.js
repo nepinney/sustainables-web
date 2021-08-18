@@ -14,7 +14,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/svg', href: 'logoPost-06.svg' }
+      { rel: 'icon', type: 'image/png', href: 'logo.png' }
     ]
   },
   target: 'static',
@@ -53,6 +53,9 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    icon: {
+      fileName: 'logo.png'
+    },
     manifest: {
       lang: 'en'
     }

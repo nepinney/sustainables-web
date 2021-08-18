@@ -8,7 +8,7 @@
           </div>
         </NuxtLink>
         <NuxtLink class='block md:hidden' to='/'>
-          <img class='logo' src='logoPost-06.svg' width='30%'/>
+          <img class='logo' src='logo.png' width='30%'/>
         </NuxtLink>
       </div>
       <div class='flex items-center justify-center z-20'>
