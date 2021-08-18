@@ -11,9 +11,41 @@ export default {
       { hid: 'app', name: 'description', content: 'Sustainables promote environmentally concious products from a variety of brands. ' +
           'Products made from recycled materials, sourced or made locally, to products that aim to replace single use plastics. Our goal is to promote products and brands' +
           'that reduce our carbon footprint.' },
-      { property: 'og:title', content: 'Sustainables' },
-      { property: 'og:image', content: '/logo.png' },
-      { name: 'format-detection', content: 'telephone=no' }
+      // Open Graph
+      // Test on: https://developers.facebook.com/tools/debug/
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Sustainables' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://www.sustainables.site/'
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Sustainables - Home'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          'Shop and discover environmentally conscious products!'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: '/logo.png'
+      },
+      // {
+      //   hid: 'og:image:secure_url',
+      //   property: 'og:image:secure_url',
+      //   content: 'https://nuxtjs.org/nuxt-card.png'
+      // },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: 'Sustainables'
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: 'logo.png' }
