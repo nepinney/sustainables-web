@@ -12,7 +12,7 @@
         </div>
 
 
-        <div class='flex justify-end pt-8 lg:pt-12 lg:pb-16'>
+        <div class='flex justify-end pt-8 pb-phone lg:pt-12 lg:pb-16'>
           <FacebookIcon color='#47745b' width='3rem' height='3rem' />
           <InstagramIcon class='pl-4' color='#47745b' width='3rem' height='3rem'/>
         </div>

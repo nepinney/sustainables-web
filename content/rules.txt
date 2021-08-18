@@ -1,2 +1,0 @@
-- SVG of categories
-  - The stroke of the image should not be set, it is inherited from parent

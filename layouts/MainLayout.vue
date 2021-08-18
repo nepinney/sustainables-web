@@ -1,5 +1,5 @@
 <template>
-  <div class='w-full h-full lg:pl-16 lg:pr-16 bg-green'>
+  <div class='w-full h-full lg:pl-16 lg:pr-16 bg-white lg:bg-green'>
 
     <HomeHeader />
 

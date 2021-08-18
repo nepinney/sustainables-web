@@ -2,10 +2,13 @@
   <nav class='p-4 pt-6 pb-6 fixed top-0 w-full left-0 lg:left-16 z-20'>
     <div class='grid grid-cols-3'>
       <div class='flex items-center justify-start z-20'>
-        <NuxtLink to='/'>
-          <div class='flex items-center bg-green-dark'>
+        <NuxtLink class='hidden md:block' to='/'>
+          <div class='hidden md:block flex items-center bg-green-dark'>
             <p class='text-xxs sm:text-lg md:text-xl pl-0.5 pr-0.5'>SUSTAINABLES</p>
           </div>
+        </NuxtLink>
+        <NuxtLink class='block md:hidden' to='/'>
+          <img class='logo' src='logoPost-06.svg' width='30%'/>
         </NuxtLink>
       </div>
       <div class='flex items-center justify-center z-20'>
@@ -166,6 +169,10 @@ p {
   stroke-width:1.5px;
   max-width: 48px;
   transition-duration: 0.3s;
+}
+
+img.logo {
+  max-height: 164.5px;
 }
 
 #menuIcon:hover, .menuVectors:hover {
