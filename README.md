@@ -1,4 +1,8 @@
-# sustainables-webapp
+# Sustainables
+
+## Introduction
+
+Affiliate marketing website to promote products with a focus on reusability and waste reduction. Created using NuxtJS and hosted on AWS Amplify. 
 
 ## Build Setup
 
